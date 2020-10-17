@@ -1,0 +1,50 @@
+.container {
+    max-width: 40em;
+    border-color: white;
+}
+.watchface {
+    color: white;
+    background-color: black;
+}
+.header *{
+    display: inline-block;
+}
+.header div{
+    display: inline;
+}
+.header h1{
+    font-size: 2em;
+}
+.header h2{
+    color: blue;
+    font-size: 1em;
+}
+.header h3{
+    color: yellow;
+    font-size: 2.5em;
+}
+
+.display {
+    height: 3em;
+    color: black;
+    background-color: white;
+}
+
+.row {
+    height: 1em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+.row *{
+    display: inline;
+}
+
+.row h4 {
+    width: 1em;
+    padding-left: .25em;
+    padding-right: .25em;
+    
+}
+
+.row button { 
+}
