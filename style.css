@@ -1,37 +1,51 @@
-.container {
-    max-width: 40em;
+.watchface {
+    text-align: center;
+    width: 16em;
     border-color: white;
+    border-radius: 30px;
+    margin:2em;
+    padding:0em 1em 1em 1em;
 }
 .watchface {
     color: white;
     background-color: black;
+}
+.header {
+    height: .5em;
 }
 .header *{
     display: inline-block;
 }
 .header div{
     display: inline;
+    margin-top: .25em;
+    margin-bottom: .25em;
 }
 .header h1{
-    font-size: 2em;
+    font-size: 1em;
 }
 .header h2{
     color: blue;
-    font-size: 1em;
+    font-size: .5em;
 }
 .header h3{
     color: yellow;
-    font-size: 2.5em;
+    font-size: .75em;
 }
 
 .display {
-    height: 3em;
+    font-size: 2em;
+    text-align: right;
+    height: 2em;
     color: black;
     background-color: white;
+    margin-bottom: .5em;
 }
-
+.display p {
+    padding-top: 1em;
+}
 .row {
-    height: 1em;
+    height: 1.25em;
     padding-top: .5em;
     padding-bottom: .5em;
 }
@@ -46,5 +60,6 @@
     
 }
 
-.row button { 
+.operator {
+    color: red;
 }

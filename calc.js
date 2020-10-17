@@ -33,6 +33,11 @@ function operate(operator,a, b) {
             return divide(a, b)
             break;
         default:
+            return undefined
     }
 
+}
+
+function updateScreenValue(value){
+    document.getElementById('screen-value').innerHTML = value
 }
