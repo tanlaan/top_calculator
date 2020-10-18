@@ -21,23 +21,23 @@ function divide(a, b){
 function operate(operator,a, b) {
     switch(operator) {
         case '+':
-            return add(a, b)
+            return add(Number(a), Number(b))
             break;
         case '-':
-            return subtract(a, b)
+            return subtract(Number(a), Number(b))
             break;
         case '*':
-            return multiply(a, b)
+            return multiply(Number(a), Number(b))
             break;
         case '/':
-            return divide(a, b)
+            return divide(Number(a), Number(b))
             break;
         default:
             return undefined
     }
 
 }
-
+let lastValue = ""
 let operator = ""
 let firstValue = null
 let secondValue = null
@@ -69,28 +69,76 @@ function updateScreenValue(value){
                     secondValue += value
                 }
             }
+            lastValue = value
             break;
         case '+':
-            operator = '+'
+            if(operator == ""){
+                operator = '+'
+            } else {
+                if(firstValue != null && secondValue != null){
+                    firstValue = operate(operator, firstValue, secondValue)
+                    secondValue = null
+                } 
+                if(operator != '+'){
+                    operator = '+'
+                }
+             }
+            lastValue = value
             break;
         case '-':
-            operator = '-'
+            if(operator == ""){
+                operator = '-'
+            } else {
+                if(firstValue != null && secondValue != null){
+                    firstValue = operate(operator, firstValue, secondValue)
+                    secondValue = null
+                }
+                if(operator != '-'){
+                    operator = '-'
+                }   
+             }
+            lastValue = value
             break;
         case '/':
-            operator = '/'
+            if(operator == ""){
+                operator = '/'
+            } else {
+                if(firstValue != null && secondValue != null){
+                    firstValue = operate(operator, firstValue, secondValue)
+                    secondValue = null
+                } 
+                if(operator != '/'){
+                    operator = '/'
+                }  
+             }
+            lastValue = value
             break;
         case '*':
-            operator = '*'
+            if(operator == ""){
+                operator = '*'
+            } else {
+                if(firstValue != null && secondValue != null){
+                    firstValue = operate(operator, firstValue, secondValue)
+                    secondValue = null
+                }   
+                if(operator != '*'){
+                    operator = '*'
+                }
+             }
+            lastValue = value
             break;
         case '=':
-            document.getElementById('screen-value').innerHTML = operate(operator, Number(firstValue), Number(secondValue))
-            operator = ""
-            firstValue = null
-            secondValue = null
+            if(firstValue != null && secondValue != null && operator != null){
+                document.getElementById('screen-value').innerHTML = operate(operator, Number(firstValue), Number(secondValue)).toFixed(4)
+                operator = ""
+                firstValue = null
+                secondValue = null
+            }
+            lastValue = value
             break;
     }
     if(value == '='){
-
+        // We already changed element's value
     } else if(secondValue == null){
         document.getElementById('screen-value').innerHTML = firstValue
     } else {
