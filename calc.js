@@ -71,6 +71,21 @@ function updateScreenValue(value){
             }
             lastValue = value
             break;
+        case '.':
+            if(secondValue == null){
+                if(firstValue.includes('.')){
+                    //Already has a '.' don't do anything
+                } else {
+                    firstValue += '.'
+                }
+            } else {
+                if(secondValue.includes('.')){
+                    //Already has a '.' don't do anything
+                } else {
+                    secondValue += '.'
+                }
+            }
+            break;
         case '+':
             if(operator == ""){
                 operator = '+'
@@ -136,9 +151,18 @@ function updateScreenValue(value){
             }
             lastValue = value
             break;
+        case 'clear':
+            operator = ""
+            firstValue = null
+            secondValue = null
+            document.getElementById('screen-value').innerHTML = '0'
+            break;
+
     }
     if(value == '='){
         // We already changed element's value
+    } else if(value == 'clear') {
+        // Also don't do anything
     } else if(secondValue == null){
         document.getElementById('screen-value').innerHTML = firstValue
     } else {

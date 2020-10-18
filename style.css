@@ -1,3 +1,6 @@
+body {
+    display: inline;
+}
 .watchface {
     text-align: center;
     width: 16em;
@@ -5,6 +8,7 @@
     border-radius: 30px;
     margin:2em;
     padding:0em 1em 1em 1em;
+    float: left;
 }
 .watchface {
     color: white;
@@ -62,4 +66,16 @@
 }
 .operator {
     color: red;
+}
+.clear {
+    display: inline;
+    margin-top: 25em;
+}
+.clear button{
+    float: left;
+    width: .5px;
+    margin: 0;
+    padding: 0;
+    margin-left: -2.6em;
+    margin-top: 13em;
 }
